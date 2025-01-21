@@ -15,7 +15,7 @@ const Paragraph = styled.p`
 `
 
 function User() {
-	const { id } = useParams() // URL에서 'id' 값을 가져옵니다.
+	const { id } = useParams()
 
 	return (
 		<Container>
@@ -24,5 +24,7 @@ function User() {
 		</Container>
 	)
 }
+
+User.layout = 'DefaultLayout'
 
 export default User

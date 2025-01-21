@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 
 const Container = styled.div`
@@ -22,6 +21,6 @@ function About() {
 	)
 }
 
-About.layout = 'SubLayout1'
+About.layout = 'DefaultLayout'
 
 export default About

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Header from '../components/layout/Header'
+import Header from '../components/common/Header.jsx'
 
 const Main = styled.main`
 	padding: 2rem;
-	background-color: #f0f8ff; /* 메인 페이지 배경 */
+	background-color: #e3f2fd;
 `
 
-function MainLayout({ children }) {
+function SubLayout2({ children }) {
 	return (
 		<div>
 			<Header />
@@ -16,4 +16,4 @@ function MainLayout({ children }) {
 	)
 }
 
-export default MainLayout
+export default SubLayout2
