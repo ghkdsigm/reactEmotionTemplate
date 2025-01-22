@@ -4,13 +4,13 @@ import { formatNumberWithComma } from '@/utils/common'
 
 const CardContainer = styled.div`
 	width: 350px;
-	height: 130px;
+	height: 135px;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.87);
 	overflow: hidden;
-	padding: 25px;
+	padding: 20px 30px;
 	flex-direction: column;
 	display: flex;
 	justify-content: space-between;
@@ -29,6 +29,7 @@ const CardHeader = styled.div`
 const More = styled.span`
 	color: #fff;
 	font-size: 0.8rem;
+	font-weight: 100;
 `
 
 const CardBody = styled.div`
@@ -54,9 +55,12 @@ const ListSection = styled.div`
 `
 
 const Divider = styled.div`
-	width: 2px;
+	width: 1px;
+	height: 62px;
+	top: 15px;
 	background-color: #d9d9d9;
 	margin: 0 15px;
+	position: relative;
 `
 
 const Num = styled.span`
@@ -72,11 +76,23 @@ const Num = styled.span`
 
 const SubTit = styled.p`
 	color: rgba(38, 38, 38, 1);
-	padding: 8px;
+	padding: 5px 20px;
 	border-radius: 99px;
 	font-weight: 700;
 	font-size: 1rem;
 	background-color: #fff;
+	width: auto;
+	display: inline-block;
+`
+
+const SubContent = styled.p`
+	font-size: ${props => (props.isEmpty ? '1.45rem' : '1rem')};
+	font-weight: ${props => (props.isEmpty ? 'bold' : 'normal')};
+	margin-top: 10px;
+	height: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `
 
 const Card = ({ title, content, more, type, subTit01, subTit02, ico }) => {
@@ -100,7 +116,16 @@ const Card = ({ title, content, more, type, subTit01, subTit02, ico }) => {
 							<>
 								<LeftSection>
 									<SubTit>{subTit01 || new Date().toLocaleString('ko-KR', { month: 'long' })}</SubTit>{' '}
-									{content['value'] ? formatNumberWithComma(content['value']) : '업데이트예정'}
+									<SubContent isEmpty={content['value']}>
+										{content['value'] ? (
+											<>
+												{formatNumberWithComma(content['value'])}{' '}
+												<em style={{ marginLeft: '5px' }}>m3</em>
+											</>
+										) : (
+											'업데이트예정'
+										)}
+									</SubContent>
 								</LeftSection>
 								<Divider />
 								<RightSection>
@@ -111,7 +136,21 @@ const Card = ({ title, content, more, type, subTit01, subTit02, ico }) => {
 												{ month: 'long' },
 											)}
 									</SubTit>{' '}
-									{content['accuracy'] ? formatNumberWithComma(content['accuracy']) : '업데이트예정'}
+									<SubContent isEmpty={content['accuracy']}>
+										{content['accuracy'] ? (
+											<>
+												{formatNumberWithComma(content['accuracy'])}{' '}
+												<span style={{ marginLeft: '3px' }}>%</span>
+												<span
+													style={{ fontSize: '0.8rem', fontWeight: '400', marginLeft: '5px' }}
+												>
+													( 6383 m3 )
+												</span>
+											</>
+										) : (
+											'업데이트예정'
+										)}
+									</SubContent>
 								</RightSection>
 							</>
 						) : (
@@ -126,7 +165,7 @@ const Card = ({ title, content, more, type, subTit01, subTit02, ico }) => {
 							{content.slice(0, 3).map((item, idx) => (
 								<div
 									key={idx}
-									style={{ height: '30px' }}
+									style={{ height: '26px' }}
 								>
 									<Num>{idx + 1}</Num>
 									{item}

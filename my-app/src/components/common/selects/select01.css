@@ -1,0 +1,44 @@
+/*커스텀 셀렉트박스*/
+.custom-select-wrapper {
+	position: relative;
+	min-width: 200px;
+	font-size: 16px;
+}
+
+.custom-select-header {
+	padding: 8px 12px;
+	border: 1px solid #555555;
+	border-radius: 4px;
+	color: #262626;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 700;
+	background-color: #fff;
+}
+
+.custom-select-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #262626;
+	background-color: #fff;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
+
+.custom-select-item {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+.custom-select-item:hover {
+	background-color: #eee;
+}

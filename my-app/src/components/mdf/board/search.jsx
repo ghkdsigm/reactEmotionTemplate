@@ -9,8 +9,8 @@ const SearchContainer = styled.div`
 	div {
 		&:nth-of-type(1) {
 			font-weight: 500;
-			font-size: 1.1rem;
-			padding-left: 10px;
+			font-size: 1.2rem;
+			//padding-left: 10px;
 		}
 		&:nth-of-type(2) {
 			font-size: 0.8rem;
@@ -46,18 +46,28 @@ const BoardSearch = () => {
 	return (
 		<SearchContainer>
 			<div>
-				<label htmlFor="product">제품</label>
+				<label
+					htmlFor="product"
+					style={{ marginRight: '10px', fontSize: '0.8rem' }}
+				>
+					제품
+				</label>
 				<SelectBox
 					id="product"
 					options={arr}
 				/>
 
-				<label htmlFor="month">기준월</label>
+				<label
+					htmlFor="month"
+					style={{ margin: '0 10px', fontSize: '0.8rem' }}
+				>
+					기준월
+				</label>
 				<SelectBox
 					id="month"
 					options={month}
 				/>
-				<span>보드 수량 예측 결과입니다</span>
+				<span style={{ marginLeft: '20px' }}>보드 수량 예측 결과입니다.</span>
 			</div>
 			<div>(2024 12월 ~ 25년 5월 월별 예측 예상)</div>
 		</SearchContainer>

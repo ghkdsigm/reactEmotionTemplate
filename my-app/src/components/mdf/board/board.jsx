@@ -21,7 +21,7 @@ const Board = () => {
 	]
 
 	return (
-		<div>
+		<>
 			<Search />
 			<SearchResult>
 				<CardBox
@@ -48,7 +48,7 @@ const Board = () => {
 					more={true}
 				></CardBox>
 			</SearchResult>
-		</div>
+		</>
 	)
 }
 

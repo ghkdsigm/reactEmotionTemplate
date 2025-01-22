@@ -1,3 +1,5 @@
 export { default as CommonLogo } from './logo.jsx'
 export { default as SelectBox } from './selects/selectbox.jsx'
+export { default as CustomSelect } from './selects/select01.jsx'
 export { default as CardBox } from './cards/card01.jsx'
+export { default as Bot } from './chatbot/bot.jsx'

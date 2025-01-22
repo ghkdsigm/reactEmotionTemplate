@@ -1,15 +1,12 @@
+/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled'
-import { Board, BoardSearch } from '@/components/mdf/index'
+import { Board, BoardSearch, BoardContents } from '@/components/mdf/index'
 
-const Container = styled.div`
-	background-color: rgba(38, 38, 38, 1);
-`
+const Container = styled.div``
 
-const Paragraph = styled.p`
-	font-size: 1.2rem;
-`
+const BoardContainer = styled.div``
 
-const BoardContainer = styled.div`
+const Inner = styled.div`
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 0 1rem 2rem;
@@ -20,16 +17,25 @@ const BoardContainer = styled.div`
 	padding: 40px 0;
 `
 
+const BoardTop = styled.div`
+	background-color: rgba(38, 38, 38, 1);
+`
 function Home() {
 	return (
 		<Container>
 			<BoardContainer>
-				<div style={{ marginBottom: '40px' }}>
-					<BoardSearch />
-				</div>
-				<Board />
+				<BoardTop>
+					<Inner>
+						<div style={{ marginBottom: '40px' }}>
+							<BoardSearch />
+						</div>
+						<Board />
+					</Inner>
+				</BoardTop>
+				<Inner>
+					<BoardContents />
+				</Inner>
 			</BoardContainer>
-			<Paragraph>test!</Paragraph>
 		</Container>
 	)
 }
